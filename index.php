@@ -7,50 +7,56 @@ if (isset($_GET['cat'])) {
 } else {
     $itemSet = $itemModel->fetchAll();
 }
+if(isset($_POST['submit'])){
+   if($_POST['search'] != 'Search'){
+       header("location:index.php?cat={$_POST['search']}");
+   }
+}
 ?>
-<!-- start slider -->
-<div id="fwslider">
-    <div class="slider_container">
-        <div class="slide"> 
-            <!-- Slide image -->
-            <img src="images/banner.jpg" alt=""/>
-            <!-- /Slide image -->
-            <!-- Texts container -->
-            <div class="slide_content">
-                <div class="slide_content_wrap">
-                    <!-- Text title -->
-                    <h4 class="title">Aluminium Club</h4>
-                    <!-- /Text title -->
-
-                    <!-- Text description -->
-                    <p class="description">Experiance ray ban</p>
-                    <!-- /Text description -->
-                </div>
-            </div>
-            <!-- /Texts container -->
-        </div>
-        <!-- /Duplicate to create more slides -->
-        <div class="slide">
-            <img src="images/banner1.jpg" alt=""/>
-            <div class="slide_content">
-                <div class="slide_content_wrap">
-                    <h4 class="title">consectetuer adipiscing </h4>
-                    <p class="description">diam nonummy nibh euismod</p>
-                </div>
-            </div>
-        </div>
-        <!--/slide -->
-    </div>
-    <div class="timers"></div>
-    <div class="slidePrev"><span></span></div>
-    <div class="slideNext"><span></span></div>
-</div>
-<!--/slider -->
+ <script>
+$(function() {
+$( ".span_2_of_3" ).sortable();
+});
+</script>
+<script>
+  $(function() {
+    var availableTags = [
+      "Electronics",
+      "Home",
+      "Beaty",
+      "Toys and Games",
+      "Woman Clothing",
+      "Men Clothing"      
+    ];
+    $( "#search" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
 <div class="main">
     <div class="wrap">
+        <div>
+            <form action="index.php" method="post">
+                <input id="search" type="text" name="search" class="textbox newsearch" style="width: 80%" value="Search"
+                 onblur="if (this.value == '') {this.value = 'Search';}"
+                 onfocus="if (this.value == 'Search') {this.value = '';}"  >
+                <input type="submit" value="Go" id="submit" name="submit" class="newbutton">                        
+            </form>
+        </div>  
         <div class="section group">
-            <div class=" span_2_of_2">
-                <h2 class="head">Featured Products</h2>
+            <div class=" span_1_of_left" style="float: left;margin-top: 5px">
+              <div class="h_nav">								
+                <ul>
+                    <li><a href="index.php?cat=Electronics">Electronics</a></li>
+                    <li><a href="index.php?cat=Home">Home</a></li>
+                    <li><a href="index.php?cat=Beaty">Beauty</a></li>
+                    <li><a href="index.php?cat=Toys and Games">Toys and Games </a></li>
+                    <li><a href="index.php?cat=Woman Clothing">Woman Clothing </a></li>
+                    <li><a href="index.php?cat=Men Clothing">Men Clothing </a></li>
+                </ul>
+              </div>
+            </div>            
+            <div class=" span_2_of_3" style="float: left">               
                 <?php
                 $i = 1;
                 foreach ($itemSet as $item) {

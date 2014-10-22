@@ -103,10 +103,10 @@ body{
 }
 .h_nav ul li a{
 	display:block;
-	font-size: 0.85em;
+	font-size: 1.5em;
 	color:#777;
 	text-transform:capitalize;
-	line-height:2em;
+	line-height:3em;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -3156,9 +3156,35 @@ ul.delivery-list li a:hover{
 }
 .row{
     float: left;
-    max-width: 300px;
+    max-width: 165px;
     margin: 30px 65px;
 }
 .clear{
     clear: both;
+}
+.newsearch{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    color: #777;
+    font-family: 'Exo 2',sans-serif;
+    font-size: 0.85em;
+    margin: 0;
+    outline: medium none;
+    padding: 7px;
+    transition: all 0.5s ease-out 0s;
+    width: 130px;
+    border: 1px solid #ddd;
+}
+.newbutton{
+    background: none repeat scroll 0 0 #4cb1ca;
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Exo 2',sans-serif;
+    font-size: 1em;
+    outline: medium none;
+    padding: 6px 34px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out 0s;
 }

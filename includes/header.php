@@ -50,41 +50,13 @@ if(!isset($_SESSION['user_id'])){
         </div>
         <div class="header-bottom">
             <div class="wrap">
-                <div class="header-bottom-left">
+                <div class="header-bottom-left" style="margin-top: 0">
                     <div class="logo">
                         <a href="index.php"><img src="images/logo.jpg" alt=""/></a>
                     </div>
-                    <div class="menu">
-                        <ul class="megamenu skyblue">
-                            <li class="active grid"><a href="index.php">Home</a></li>						
-                            <li><a class="color5" href="#">Category</a>
-                                <div class="megapanel">
-                                    <div class="col1">
-                                        <div class="h_nav">								
-                                            <ul>
-                                                <li><a href="index.php?cat=Electronics">Electronics</a></li>
-                                                <li><a href="index.php?cat=Home">Home</a></li>
-                                                <li><a href="index.php?cat=Beaty">Beaty</a></li>
-                                                <li><a href="index.php?cat=Toys and Games ">Toys and Games </a></li>
-                                                <li><a href="index.php?cat=Woman Clothing">Woman Clothing </a></li>
-                                                <li><a href="index.php?cat=Men Clothing">Men Clothing </a></li>
-                                            </ul>	
-                                        </div>							
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
-                <div class="header-bottom-right">
-                    <div class="search">	  
-                        <input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Search';
-                                }" style="width: 250px">
-                        <input type="submit" value="Subscribe" id="submit" name="submit">
-                        <div id="response"> </div>
-                    </div>                    
-                </div>
-                <div class="clear"></div>
+                
+                
             </div>
         </div>
