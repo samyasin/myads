@@ -19,13 +19,12 @@ class user {
     public $occup;
     public $country;
     public $live;
-    public $edu_intrest;
-    public $techno_intrest;
-    public $sport_intrest;
-    public $car_intrest;
-    public $music_intrest;
-    public $movie_intrest;
-    public $history_intrest;
+    public $electronics_intrest;
+    public $furniture_intrest;
+    public $beauty_intrest;
+    public $toys_intrest;
+    public $woman_intrest;
+    public $men_intrest;
     public $religion;
     public $color;
 
@@ -58,14 +57,14 @@ class user {
         $this->instantiate($record);
         $database = new database();
         $sql = "INSERT INTO users(fname, lname, birth, gender, email, password, occup, country, live,
-                                  edu_intrest, techno_intrest, sport_intrest, car_intrest, music_intrest,
-                                  movie_intrest,history_intrest, religion, color)
+                                  electronics_intrest, furniture_intrest, beauty_intrest, toys_intrest, woman_intrest,
+                                  men_intrest, religion, color)
                 VALUES ('$this->firstName', '$this->lastName', "
                 . "'$this->birth', '$this->gender', "
                 . "'$this->email', '$this->password', '$this->occup', "
-                . "'$this->country', '$this->live', '$this->edu_intrest', "
-                . "'$this->techno_intrest' , '$this->sport_intrest', '$this->car_intrest',"
-                . "'$this->music_intrest', '$this->movie_intrest', '$this->history_intrest',"
+                . "'$this->country', '$this->live', '$this->electronics_intrest', "
+                . "'$this->furniture_intrest' , '$this->beauty_intrest', '$this->toys_intrest',"
+                . "'$this->woman_intrest', '$this->men_intrest',"
                 . "'$this->religion','$this->color')";
         
         $result = $database->query($sql);
@@ -103,26 +102,23 @@ class user {
         if (isset($post['live'])) {
             $this->live = mysql_real_escape_string($post['live']);
         }
-        if (isset($post['edu_intrest'])) {
-            $this->edu_intrest = mysql_real_escape_string($post['edu_intrest']);
+        if (isset($post['electronics_intrest'])) {
+            $this->electronics_intrest = mysql_real_escape_string($post['electronics_intrest']);
         }
-        if (isset($post['techno_intrest'])) {
-            $this->techno_intrest = mysql_real_escape_string($post['techno_intrest']);
+        if (isset($post['furniture_intrest'])) {
+            $this->furniture_intrest = mysql_real_escape_string($post['furniture_intrest']);
         }
-        if (isset($post['sport_intrest'])) {
-            $this->sport_intrest = mysql_real_escape_string($post['sport_intrest']);
+        if (isset($post['beauty_intrest'])) {
+            $this->beauty_intrest = mysql_real_escape_string($post['beauty_intrest']);
         }
-        if (isset($post['car_intrest'])) {
-            $this->car_intrest = mysql_real_escape_string($post['car_intrest']);
+        if (isset($post['toys_intrest'])) {
+            $this->toys_intrest = mysql_real_escape_string($post['toys_intrest']);
         }
-        if (isset($post['music_intrest'])) {
-            $this->music_intrest = mysql_real_escape_string($post['music_intrest']);
+        if (isset($post['woman_intrest'])) {
+            $this->woman_intrest = mysql_real_escape_string($post['woman_intrest']);
         }
-        if (isset($post['movie_intrest'])) {
-            $this->movie_intrest = mysql_real_escape_string($post['movie_intrest']);
-        }
-        if (isset($post['history_intrest'])) {
-            $this->history_intrest = mysql_real_escape_string($post['history_intrest']);
+        if (isset($post['men_intrest'])) {
+            $this->men_intrest = mysql_real_escape_string($post['men_intrest']);
         }
         if (isset($post['religion'])) {
             $this->religion = mysql_real_escape_string($post['religion']);
@@ -144,25 +140,23 @@ class user {
         $this->instantiate($record);
         $database = new database();
         $sql = "UPDATE users set
-                  fname           ='$this->firstName',
-                  lname           = '$this->lastName',
-                  birth           = '$this->birth',
-                  gender          = '$this->gender',
-                  email           = '$this->email',
-                  password        ='$this->password',
-                  occup           = '$this->occup',
-                  country         = '$this->country',
-                  live            = '$this->live',
-                  edu_intrest     = '$this->edu_intrest',
-                  techno_intrest  = '$this->techno_intrest',
-                  sport_intrest   = '$this->sport_intrest',
-                  car_intrest     = '$this->car_intrest',
-                  music_intrest   = '$this->music_intrest',
-                  movie_intrest   = '$this->movie_intrest',
-                  history_intrest = '$this->history_intrest',
-                  movie_intrest   = '$this->movie_intrest',
-                  religion        = '$this->religion',
-                  color           = '$this->color'
+                  fname                ='$this->firstName',
+                  lname                = '$this->lastName',
+                  birth                = '$this->birth',
+                  gender               = '$this->gender',
+                  email                = '$this->email',
+                  password             ='$this->password',
+                  occup                = '$this->occup',
+                  country              = '$this->country',
+                  live                 = '$this->live',
+                  electronics_intrest  = '$this->electronics_intrest',
+                  furniture_intrest    = '$this->furniture_intrest',
+                  beauty_intrest       = '$this->beauty_intrest',
+                  toys_intrest         = '$this->toys_intrest',
+                  woman_intrest        = '$this->woman_intrest',
+                  men_intrest          = '$this->men_intrest',                  
+                  religion             = '$this->religion',
+                  color                = '$this->color'
                   WHERE user_id = $id";
         
         $result = $database->query($sql);

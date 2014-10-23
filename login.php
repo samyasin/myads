@@ -5,7 +5,7 @@ $user = new user();
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $user_id = $user::auth($_POST['email'], $_POST['password']);
     if ($user_id) {
-        header("location:index.php");
+        header("location:index.php?redirect=true");
     } else {
         $message = "The Login you entered is incorrect, Please try again.";
     }

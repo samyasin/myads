@@ -1,5 +1,4 @@
-<?php
-require_once 'mysqldb.php'; ?>
+<?php require_once 'mysqldb.php'; ?>
 <?php
 
 /*
@@ -15,7 +14,7 @@ class product {
     public $description;
     public $image;
     public $url;
-    
+
     // this method will fetch all products from DB
     public static function fetchAll() {
         $database = new database();
@@ -27,7 +26,7 @@ class product {
             return FALSE;
         }
     }
-    
+
     // this method will fetch items by its categories 
     public static function fetchByCat($cat) {
         $database = new database();
@@ -51,4 +50,16 @@ class product {
             return FALSE;
         }
     }
+
+    public static function fetchBySql($sql) {
+        $database = new database();
+        $result = $database->query($sql);
+        $userSet = $database->fetchArray($result);
+        if (isset($userSet)) {
+            return $userSet;
+        } else {
+            return FALSE;
+        }
+    }
+
 }

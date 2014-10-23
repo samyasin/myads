@@ -107,28 +107,25 @@ if(isset($_POST['submit'])){
     $("document").ready(function() {
         // range option 
         var credits = 10,
-                html = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="edu_intrest" id="discount_credits" />\
+                html = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="electronics_intrest" id="discount_credits" />\
                    <span>' + credits + '</span>';
-        htmlone = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="techno_intrest" id="techno_credits" />\
+        htmlone = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="furniture_intrest" id="techno_credits" />\
                    <span>' + credits + '</span>';
-        htmltwo = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="sport_intrest" id="sport_credits" />\
+        htmltwo = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="beauty_intrest" id="sport_credits" />\
                    <span>' + credits + '</span>';
-        htmlthree = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="car_intrest" id="car_credits" />\
+        htmlthree = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="toys_intrest" id="car_credits" />\
                    <span>' + credits + '</span>';
-        htmlfour = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="music_intrest" id="music_credits" />\
+        htmlfour = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="woman_intrest" id="music_credits" />\
                    <span>' + credits + '</span>';
-        htmlfive = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="history_intrest" id="history_credits" />\
+        htmlfive = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="men_intrest" id="history_credits" />\
                    <span>' + credits + '</span>';
-        htmlsix = '<input type="range"  min="0" max="' + credits + '" value="' + credits + '" name="movie_intrest" id="movie_credits" />\
-                   <span>' + credits + '</span>';
-        
+       
         $("#edu").append(html);
         $("#techno").append(htmlone);
         $("#sport").append(htmltwo);
         $("#car").append(htmlthree);
         $("#music").append(htmlfour);
         $("#history").append(htmlfive);
-        $("#movie").append(htmlsix);
 
         $('#discount_credits').on("change mousemove", function() {
             $(this).next().html($(this).val());
@@ -190,16 +187,16 @@ if(isset($_POST['submit'])){
                         }"></div>
                 <div>
                     <select name="gender">
-                        <option value="male"
+                        <option value="1"
                          <?php if(isset($gender)){
-                             if($gender == 'male'){
+                             if($gender == '1'){
                                  echo "selected='selected'";
                              }                        
                         } ?>
                         >Male</option>
-                        <option value="female"
+                        <option value="0"
                         <?php if(isset($gender)){
-                             if($gender == 'female'){
+                             if($gender == '0'){
                                  echo "selected='selected'";
                              }                        
                         } ?>
@@ -639,26 +636,24 @@ if(isset($_POST['submit'])){
                     <h1 class="title">Which of the following is within your interest</h1>
                     <br>                     
                     <div id="edu" style="margin: 10px">
-                        <label for="points">Education:</label>                        
+                        <label for="points">Electronics:</label>                        
                     </div>
                     <div id="techno" style="margin: 10px;">
-                        <label for="points">Technology:</label>
+                        <label for="points">Furniture:</label>
                     </div>
                     <div id="sport" style="margin: 10px;">
-                        <label for="points">Sports:</label>
+                        <label for="points">Beauty:</label>
                     </div>
                     <div id="car" style="margin: 10px;">
-                        <label for="points">Cars:</label>
+                        <label for="points">Toys and Games:</label>
                     </div>
                     <div id="music" style="margin: 10px;">
-                        <label for="points">Music:</label>
+                        <label for="points">Woman Clothing:</label>
                     </div>
                     <div id="movie" style="margin: 10px;">
-                        <label for="points">Movies:</label>
+                        <label for="points">Men Clothing:</label>
                     </div>
-                    <div id="history" style="margin: 10px;">
-                        <label for="points">History:</label>
-                    </div>
+                    
                 </div>
                 <br>
                 <div>

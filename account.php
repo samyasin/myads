@@ -101,28 +101,26 @@ $user_set = $user_set[0];
     $("document").ready(function() {
         // range option 
         var credits = 10,
-                html = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['edu_intrest']; ?> " name="edu_intrest" id="discount_credits" />\
-                   <span><?php echo $user_set['edu_intrest']; ?></span>';
-        htmlone = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['techno_intrest']; ?>" name="techno_intrest" id="techno_credits" />\
-                   <span><?php echo $user_set['techno_intrest']; ?></span>';
-        htmltwo = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['sport_intrest']; ?>" name="sport_intrest" id="sport_credits" />\
-                   <span><?php echo $user_set['sport_intrest']; ?></span>';
-        htmlthree = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['car_intrest']; ?>" name="car_intrest" id="car_credits" />\
-                   <span><?php echo $user_set['car_intrest']; ?></span>';
-        htmlfour = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['music_intrest']; ?>" name="music_intrest" id="music_credits" />\
-                   <span><?php echo $user_set['music_intrest']; ?></span>';
-        htmlfive = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['history_intrest']; ?>" name="history_intrest" id="history_credits" />\
-                   <span><?php echo $user_set['history_intrest']; ?></span>';
-        htmlsix = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['movie_intrest']; ?>" name="movie_intrest" id="movie_credits" />\
-                   <span><?php echo $user_set['movie_intrest']; ?></span>';
+                html = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['electronics_intrest']; ?> " name="electronics_intrest" id="discount_credits" />\
+                   <span><?php echo $user_set['electronics_intrest']; ?></span>';
+        htmlone = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['furniture_intrest']; ?>" name="furniture_intrest" id="techno_credits" />\
+                   <span><?php echo $user_set['furniture_intrest']; ?></span>';
+        htmltwo = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['beauty_intrest']; ?>" name="beauty_intrest" id="sport_credits" />\
+                   <span><?php echo $user_set['beauty_intrest']; ?></span>';
+        htmlthree = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['toys_intrest']; ?>" name="toys_intrest" id="car_credits" />\
+                   <span><?php echo $user_set['toys_intrest']; ?></span>';
+        htmlfour = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['woman_intrest']; ?>" name="woman_intrest" id="music_credits" />\
+                   <span><?php echo $user_set['woman_intrest']; ?></span>';
+        htmlfive = '<input type="range"  min="0" max="' + credits + '" value="<?php echo $user_set['men_intrest']; ?>" name="men_intrest" id="movie_credits" />\
+                   <span><?php echo $user_set['men_intrest']; ?></span>';
         
         $("#edu").append(html);
         $("#techno").append(htmlone);
         $("#sport").append(htmltwo);
         $("#car").append(htmlthree);
         $("#music").append(htmlfour);
-        $("#history").append(htmlfive);
-        $("#movie").append(htmlsix);
+        $("#movie").append(htmlfive);
+        
 
         $('#discount_credits').on("change", function() {
             $(this).next().html($(this).val());
@@ -139,12 +137,10 @@ $user_set = $user_set[0];
         $('#music_credits').on("change", function() {
             $(this).next().html($(this).val());
         });
-        $('#history_credits').on("change", function() {
-            $(this).next().html($(this).val());
-        });
         $('#movie_credits').on("change", function() {
             $(this).next().html($(this).val());
         });
+        
 
 
 
@@ -186,16 +182,16 @@ $user_set = $user_set[0];
                     } ?>></div>
                 <div>
                     <select name="gender">
-                        <option value="male"
+                        <option value="1"
                          <?php if(isset($user_set['gender'])){
-                             if($user_set['gender'] == 'male'){
+                             if($user_set['gender'] == '1'){
                                  echo "selected='selected'";
                              }                        
                         } ?>
                         >Male</option>
-                        <option value="female"
+                        <option value="0"
                         <?php if(isset($user_set['gender'])){
-                             if($user_set['gender'] == 'female'){
+                             if($user_set['gender'] == '0'){
                                  echo "selected='selected'";
                              }                        
                         } ?>
@@ -638,26 +634,23 @@ $user_set = $user_set[0];
                     <h1 class="title">Which of the following is within your interest</h1>
                     <br>                     
                     <div id="edu" class="intrest">
-                        <label for="points">Education:</label>                        
+                        <label for="points">Electronics:</label>                        
                     </div>
                     <div id="techno" class="intrest">
-                        <label for="points">Technology:</label>
+                        <label for="points">Furniture:</label>
                     </div>
                     <div id="sport" class="intrest">
-                        <label for="points">Sports:</label>
+                        <label for="points">Beauty:</label>
                     </div>
                     <div id="car" class="intrest">
-                        <label for="points">Cars:</label>
+                        <label for="points">Toys and Games:</label>
                     </div>
                     <div id="music" class="intrest">
-                        <label for="points">Music:</label>
+                        <label for="points">Woman Clothing:</label>
                     </div>
                     <div id="movie" class="intrest">
-                        <label for="points">Movies:</label>
-                    </div>
-                    <div id="history" class="intrest">
-                        <label for="points">History:</label>
-                    </div>
+                        <label for="points">Men Clothing:</label>
+                    </div>                    
                 </div>
                 <br>
                 <div>
