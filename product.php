@@ -1,10 +1,16 @@
 <?php require_once 'includes/items.php'; ?>
 <?php require_once 'includes/header.php'; ?>
+<?php require_once 'includes/userlog.php'; ?>
 <?php
 $product_id = $_GET['id'];
 $itemModel = new product();
 $productSet = $itemModel->fetchById($product_id);
 
+// log user actions 
+$userLog = new userLog();
+$userLog->productId = $product_id;
+$userLog->userId    = $_SESSION['user_id'];
+$userLog->insert();
 ?>
 <hr>
 <div class="main">
