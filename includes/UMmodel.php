@@ -11,7 +11,7 @@ if(isset($_GET['redirect'])){
     // Generic Select Function
         function productWeight($category,$limit){
             global $itemModel;
-            $sql = "SELECT * FROM products WHERE category = '$category' LIMIT $limit";
+            $sql = "SELECT * FROM products WHERE category = '$category' ORDER BY RAND() LIMIT $limit";
             return $itemModel->fetchBySql($sql);
         }
     // remove unnecassary category according to gender    

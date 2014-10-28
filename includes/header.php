@@ -18,6 +18,7 @@ if(!isset($_SESSION['user_id'])){
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/jqueryui.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/jquery.rating.css" rel="stylesheet" type="text/css" media="all" />
         <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="js/jquery1.min.js"></script>
         <!-- start menu -->
@@ -32,6 +33,7 @@ if(!isset($_SESSION['user_id'])){
         <script src="js/css3-mediaqueries.js"></script>
         <script src="js/fwslider.js"></script>
         <!--end slider -->
+        <script src="js/jquery.rating.js"></script>
         <script src="js/jquery.easydropdown.js"></script>
     </head>
     <body>

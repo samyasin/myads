@@ -12,7 +12,7 @@ if (isset($_GET['cat'])) {
         // will start using UM
         $itemSet = $calcultedProducts;
     }else{
-        $itemSet = $itemModel->fetchAll();
+        $itemSet = $itemModel->fetchRand();
     }   
 }
 if(isset($_POST['submit'])){

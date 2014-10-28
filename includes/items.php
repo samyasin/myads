@@ -25,7 +25,20 @@ class product {
         } else {
             return FALSE;
         }
+    }    
+    // fetch random products
+    public static function fetchRand() {
+        $database = new database();
+        $result = $database->query("SELECT * FROM products ORDER BY RAND() LIMIT 9");
+        $productSet = $database->fetchArray($result);
+        if (isset($productSet)) {
+            return $productSet;
+        } else {
+            return FALSE;
+        }
     }
+    
+    
 
     // this method will fetch items by its categories 
     public static function fetchByCat($cat) {
