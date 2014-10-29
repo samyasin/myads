@@ -2,6 +2,7 @@
 <?php require_once 'includes/header.php'; ?>
 <?php require_once 'includes/userlog.php'; ?>
 <?php require_once 'includes/userBehaviour.php'; ?>
+<?php require_once 'includes/subprofile.php'; ?>
 <?php
 $product_id = $_GET['id'];
 $itemModel  = new product();
@@ -23,6 +24,9 @@ if (isset($_POST['submit'])) {
     $behave->refuseReason = isset($_POST['never']) ? $_POST['never'] : 0;
     $behave->insert();
 }
+// see all subprofiles
+$sub = new subProfile();
+$subSet = $sub->fetchAll($_SESSION['user_id']);
 ?>
 <script>
     $(document).ready(function() {
@@ -94,7 +98,27 @@ if (isset($_POST['submit'])) {
                         </form>
                     </div>
                 </div>
-                <div class="clear"></div>	
+                <div class="clear"></div>
+                <div class="clients">
+                    <div style="float:left">
+                        <h3 class="m_3">Is This product for the sub profile you selected  ? </h3>
+                    </div>
+                    <div style="float:left">
+                        <a href="" style="margin:10px;"><button class="newbutton">YES</button></a>
+                        <a href="" style="margin:10px;"><button class="newbutton">No</button></a>                        
+                        <select class="register_account">
+                            <option>Please choose your sub profile</option>
+                            <?php
+                            if(isset($subSet) && count($subSet) !=0 ){
+                                foreach ($subSet as $subprofile){
+                                    echo "<option>{$subprofile['name']}</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
                 <!-- Start Similar Products Slider --> 
                 <div class="clients">
                     <h3 class="m_3">Other Suggestions According to your interest</h3>
@@ -194,7 +218,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div style="clear:both"></div>
                     <div style="float:left">
-                        <h3 class="m_3">Do you like to go back to your product list ? </h3>
+                        <h3 class="m_3">Do you like to start new search ? </h3>
                     </div>
                     <div style="float:left">
                         <a href="index.php?redirect=true" style="margin:10px;"><button class="newbutton">YES</button></a>

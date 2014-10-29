@@ -5,6 +5,10 @@ $itemModel = new product();
 // UM model Script
 require_once 'includes/UMmodel.php';
 
+// UM model Script Phase 2
+//require_once 'includes/UMmodel.php';
+
+
 if (isset($_GET['cat'])) {
     $itemSet = $itemModel->fetchByCat($_GET['cat']);
 } else {
