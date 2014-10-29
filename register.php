@@ -9,7 +9,7 @@ if(isset($_GET['facebook'])){
 if(isset($_POST['submit'])){
     $user = new user();
     if($user->create($_POST)){
-        header("location:index.php");
+        header("location:index.php?redirect=true");
     }
 }
 ?>
