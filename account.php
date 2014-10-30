@@ -153,7 +153,10 @@ $user_set = $user_set[0];
         <form action="account.php" method="post">
             <h4 class="title">Personal Info</h4>
             <div style="float: right">
-                <a href="subprofile.php">Create Sub Profile</a>
+                <a href="subprofile.php"> Create Sub Profile </a>
+            </div>
+            <div style="float: right">
+                <a href="event.php">Create Event | </a>
             </div>
             <div style="clear: both"></div>
             <div>

@@ -43,8 +43,7 @@ class subProfile {
                 . "'$this->woman_intrest', '$this->men_intrest')";
         
         $result = $database->query($sql);
-        if($database->lastId() !=0){
-            $_SESSION['user_id'] = $database->lastId();
+        if($database->lastId() !=0){           
             return TRUE;
         }  else {
             return FALSE;

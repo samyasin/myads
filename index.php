@@ -1,5 +1,6 @@
 <?php require_once 'includes/items.php'; ?>
 <?php require_once 'includes/header.php'; ?>
+<?php require_once 'includes/events.php'; ?>
 <?php
 $itemModel = new product();
 // UM model Script
@@ -24,6 +25,9 @@ if(isset($_POST['submit'])){
        header("location:index.php?cat={$_POST['search']}");
    }
 }
+// see if he have events on the same date 
+$event = new events();
+$eventSet = $event->fetchAll($_SESSION['user_id']);
 ?>
  <script>
 $(function() {
@@ -55,9 +59,9 @@ $( ".span_2_of_3" ).sortable();
    });
     
   
-  </script>
-<div class="main">
-    <div class="wrap">
+  </script>    
+<div class="main">    
+    <div class="wrap"> 
         <div>
             <form action="index.php" method="post">
                 <input id="search" type="text" name="search" class="textbox newsearch" style="width: 80%" value="Search"
@@ -65,7 +69,16 @@ $( ".span_2_of_3" ).sortable();
                  onfocus="if (this.value == 'Search') {this.value = '';}"  >
                 <input type="submit" value="Go" id="submit" name="submit" class="newbutton">                        
             </form>
-        </div>  
+        </div>
+       <?php
+       if(isset($eventSet) && count($eventSet) != 0){
+           echo "<div class='sidebar-bottom' style='box-shadow: none;color: green'>"; 
+           echo "<p>We Match This Event : '{$eventSet[0]['event_name']}' According to your Events </p>";
+       }
+       ?>
+        
+            
+        </div>
         <div class="section group">
             <div class=" span_1_of_left" style="float: left;margin-top: 5px">
               <div class="h_nav">								
