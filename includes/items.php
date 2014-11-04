@@ -38,7 +38,19 @@ class product {
         }
     }
     
+    public function fetchNameById($id){
+        $database = new database();
+        $result = $database->query("SELECT product_name FROM products WHERE product_id = $id");
+        $productSet = $database->fetchArray($result);
+        if (isset($productSet)) {
+            return $productSet[0]['product_name'];
+        } else {
+            return FALSE;
+        }
+    }
+
     
+
 
     // this method will fetch items by its categories 
     public static function fetchByCat($cat) {

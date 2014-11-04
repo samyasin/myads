@@ -4,9 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/var/www/myads/register.php</file>
+            <file>file:/var/www/myads/includes/events.php</file>
             <file>file:/var/www/myads/account.php</file>
             <file>file:/var/www/myads/includes/items.php</file>
             <file>file:/var/www/myads/includes/users.php</file>
+            <file>file:/var/www/myads/includes/subprofile.php</file>
+            <file>file:/var/www/myads/includes/userlog.php</file>
+            <file>file:/var/www/myads/event.php</file>
+            <file>file:/var/www/myads/subprofile.php</file>
             <file>file:/var/www/myads/index.php</file>
         </group>
     </open-files>

@@ -44,6 +44,7 @@ if(!isset($_SESSION['user_id'])){
                     <ul>
                         <li class="active">Welcome <?php echo $userSet[0]['fname']; ?></li> |                        
                         <li class="active"><a href="account.php">Account</a></li> |                        
+                        <li class="active"><a href="tf.php">Calculations</a></li> |                        
                         <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
